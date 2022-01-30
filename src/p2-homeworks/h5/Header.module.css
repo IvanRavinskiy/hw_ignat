@@ -1,0 +1,16 @@
+.navbar {
+    margin: 10px;
+    background-color: antiquewhite;
+    width: 200px;
+    text-decoration: none;
+}
+
+.openMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.links {
+    text-decoration: none;
+}
