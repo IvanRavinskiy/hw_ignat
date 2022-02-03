@@ -19,7 +19,7 @@ function HW8() {
     // need to fix any
     const finalPeople = people.map((p: any) => (
         <div key={p._id}>
-            some name, age
+            {p.name}   {p.age}
         </div>
     ))
 
