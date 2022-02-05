@@ -16,7 +16,6 @@ function Clock() {
         }, 1000)
         setTimerId(id)
     }
-    console.log(date)
     const onMouseEnter = () => {
        setShow(true)
     }
@@ -24,8 +23,10 @@ function Clock() {
        setShow(false)
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
+    // const stringTime = `${date?.getHours()} : ${date?.getMinutes()} : ${date?.getSeconds()}`// fix with date
+    // const stringDate = `${date?.getDate()}.${date?.getMonth()}.${date?.getFullYear()}`// fix with date
+    const stringTime = date?.toLocaleTimeString() || <br/>
+    const stringDate = date?.toLocaleDateString() || <br/>
 
     return (
         <div>
@@ -36,11 +37,12 @@ function Clock() {
                 {stringTime}
             </div>
 
-            {show && (
+            {show ? (
                 <div>
                     {stringDate}
                 </div>
-            )}
+
+            )  : <br/>}
 
             <SuperButton onClick={start}>start</SuperButton>
             <SuperButton onClick={stop}>stop</SuperButton>
